@@ -1,0 +1,39 @@
+﻿<Window x:Class="HomeWork_9WPF.HomeWork"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:HomeWork_9WPF"
+        mc:Ignorable="d"
+        Title="HomeWork" Height="450" Width="800">
+    <Grid>
+        <ListBox x:Name="ListBox" Background="Red" Margin="500,10,10,10" Opacity="0.5">
+            <TextBlock HorizontalAlignment="Center" VerticalAlignment="Top"/>
+        </ListBox>
+        <Label x:Name="Label"  Background="Green" Margin="10,259,299,10" Opacity="0.5"/>
+        <Button x:Name="ButtonList" HorizontalAlignment="Left" Grid.Row="0" Width="100" 
+                Height="50" Margin="10,10,0,361" Click="ButtonList_Click">
+            <Button.Template>
+                <ControlTemplate>
+                    <Grid>
+                        <Rectangle Fill ="Red" RadiusY="15" RadiusX="15"/>
+                        <TextBlock Text="ListBox" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                    </Grid>
+                </ControlTemplate>
+            </Button.Template>
+        </Button>
+        <Button x:Name="ButtonLabel" HorizontalAlignment="Left" Width="100" 
+                Height="50" Margin="10,75,0,296" Click="ButtonLabel_Click">
+            <Button.Template>
+                <ControlTemplate>
+                    <Grid>
+                        <Rectangle Fill ="Green" RadiusY="15" RadiusX="15"/>
+                        <TextBlock Text="Lable" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                    </Grid>
+                </ControlTemplate>
+            </Button.Template>
+        </Button>
+
+
+    </Grid>
+</Window>
