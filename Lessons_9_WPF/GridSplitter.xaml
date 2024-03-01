@@ -64,7 +64,6 @@
                       Height="5"
                       Opacity="0.1"
                       />
-
         </Grid>
     </Grid>
 </Window>

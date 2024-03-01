@@ -1,17 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Module_5;
+using System.Collections.ObjectModel;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
-using Module_5;
 
 namespace HomeWork_9WPF
 {
@@ -20,19 +9,34 @@ namespace HomeWork_9WPF
     /// </summary>
     public partial class HomeWork : Window
     {
+        ObservableCollection<Program> listWords = new ObservableCollection<Program>();
+        private string[] words;
+
         public HomeWork()
         {
             InitializeComponent();
+            listBox.ItemsSource = listWords;
         }
 
         private void ButtonLabel_Click(object sender, RoutedEventArgs e)
         {
-
+            words = Program.SentenceReverse(TextBoxLabel.Text);
+            string text = string.Join("", words);
+            label.Content = text;
         }
 
         private void ButtonList_Click(object sender, RoutedEventArgs e)
         {
-
+           words = Program.SentenceCuter(TextBoxList.Text);
+            foreach (string wrd in words)
+            {
+                listWords.Add(new Program()
+                {
+                    saidSentence = wrd
+                });
+            }
         }
     }
-}
+ }
+
+

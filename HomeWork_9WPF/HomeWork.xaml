@@ -5,35 +5,66 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:HomeWork_9WPF"
         mc:Ignorable="d"
+        Background="Gold"
+        x:Name="window"
         Title="HomeWork" Height="450" Width="800">
     <Grid>
-        <ListBox x:Name="ListBox" Background="Red" Margin="500,10,10,10" Opacity="0.5">
-            <TextBlock HorizontalAlignment="Center" VerticalAlignment="Top"/>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width= "*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Grid Grid.Column="0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="75"/>
+                <RowDefinition Height="75"/>
+                <RowDefinition Height="75*"/>
+                <RowDefinition Height="194*"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+            <Grid Grid.Column="0" Grid.Row="0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Button x:Name="ButtonLabel" Grid.Column="0" Grid.Row="0" HorizontalAlignment="Center" Width="100" 
+                Height="50" Margin="10" Click="ButtonLabel_Click">
+                    <Button.Template>
+                        <ControlTemplate>
+                            <Grid>
+                                <Rectangle Fill ="Green" RadiusY="15" RadiusX="15"/>
+                                <TextBlock Text="Label" FontSize="20" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                            </Grid>
+                        </ControlTemplate>
+                    </Button.Template>
+                </Button>
+                <Button x:Name="ButtonList" Margin="10" HorizontalAlignment="Center" Grid.Column="1" Grid.Row="0" Width="100" 
+                Height="50" Click="ButtonList_Click">
+                    <Button.Template>
+                        <ControlTemplate>
+                            <Grid>
+                                <Rectangle Fill ="Red" RadiusY="15" RadiusX="15"/>
+                                <TextBlock Text="ListBox" FontSize="20" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                            </Grid>
+                        </ControlTemplate>
+                    </Button.Template>
+                </Button>
+            </Grid>
+            <TextBox x:Name="TextBoxList" Text="Text Box List" TextWrapping="Wrap" FontSize="15" Margin="10,9.8,9.8,10.4" Grid.Column="0"
+                     Grid.Row="1" Background="Red"/>
+            <TextBox x:Name="TextBoxLabel" Text="Text Box Label" TextWrapping="Wrap" FontSize="15" Margin="10,9.8,9.8,10.4" Grid.Column="0"
+                     Grid.Row="2" Background="Green"/>
+            <Label x:Name="label" Grid.Column="0" Grid.Row="3" Margin="10,5.4,9.8,10"
+                   Background="Green" Opacity="0.5">
+            </Label>
+        </Grid>
+        <ListBox x:Name="listBox" Grid.Row="0" Grid.Column="1" Margin="10" Background="Red" Opacity="0.5">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel>
+                        <TextBlock Text="{Binding saidSentence}"/>
+                    </StackPanel>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
         </ListBox>
-        <Label x:Name="Label"  Background="Green" Margin="10,259,299,10" Opacity="0.5"/>
-        <Button x:Name="ButtonList" HorizontalAlignment="Left" Grid.Row="0" Width="100" 
-                Height="50" Margin="10,10,0,361" Click="ButtonList_Click">
-            <Button.Template>
-                <ControlTemplate>
-                    <Grid>
-                        <Rectangle Fill ="Red" RadiusY="15" RadiusX="15"/>
-                        <TextBlock Text="ListBox" HorizontalAlignment="Center" VerticalAlignment="Center"/>
-                    </Grid>
-                </ControlTemplate>
-            </Button.Template>
-        </Button>
-        <Button x:Name="ButtonLabel" HorizontalAlignment="Left" Width="100" 
-                Height="50" Margin="10,75,0,296" Click="ButtonLabel_Click">
-            <Button.Template>
-                <ControlTemplate>
-                    <Grid>
-                        <Rectangle Fill ="Green" RadiusY="15" RadiusX="15"/>
-                        <TextBlock Text="Lable" HorizontalAlignment="Center" VerticalAlignment="Center"/>
-                    </Grid>
-                </ControlTemplate>
-            </Button.Template>
-        </Button>
-
-
     </Grid>
 </Window>

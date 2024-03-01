@@ -96,8 +96,8 @@
     </Page>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Lessons_9_WPF\Module_5\Module_5.csproj">
-      <Project>{68f5f8f8-4f1c-43c5-99de-067f442a71de}</Project>
+    <ProjectReference Include="..\Module_5\Module_5.csproj">
+      <Project>{359e56de-a126-4d88-aaec-18629f88a2ea}</Project>
       <Name>Module_5</Name>
     </ProjectReference>
   </ItemGroup>

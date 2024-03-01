@@ -3,7 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:local="clr-namespace:Lessons_9_WPF"
              xmlns:sys="clr-namespace:System;assembly=mscorlib"
-             StartupUri="StackPanel.xaml">
+             StartupUri="HomeWork.xaml">
     <Application.Resources>
         <sys:String x:Key="titleStringRosourses">Test</sys:String>
     </Application.Resources>
